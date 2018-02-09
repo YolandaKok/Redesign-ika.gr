@@ -275,7 +275,7 @@
           <div class="col-md-12">
             <?php
                 require_once 'login.php';
-                $conn = new mysqli($hn,$un,$pw,$db);
+                $conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
                 $current_user = $_SESSION['user'];
                 mysqli_query($conn, "SET NAMES 'utf8'");
                 $query = "SELECT * FROM users WHERE username='$current_user'";
