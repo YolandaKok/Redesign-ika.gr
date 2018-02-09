@@ -196,7 +196,6 @@ $("#connect1").click(function(){
           }
   });
 });
-
 });
 
 /* Print the dynamic PDF */
@@ -216,5 +215,4 @@ function printPDF1(app_id) {
 function startDownload(app_id) {
     var url = "dynamic_pdf.php/?id=" + app_id;
     window.open(url,'_self');
-
 }

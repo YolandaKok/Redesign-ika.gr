@@ -17,21 +17,10 @@
   <link href="fontawesome-free-5.0.1/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900|Open+Sans:700|Roboto" rel="stylesheet">
+  <script src="scripts/news.js"></script>
 </head>
 
 <body>
-<script type="text/javascript">
-    $(function () {
-        $("#demo3").bootstrapNews({
-            newsPerPage: 3,
-            autoplay: false,
-
-            onToDo: function () {
-                //console.log(this);
-            }
-        });
-    });
-</script>
 
 <div class="container-fluid">
 <!-- Navbar Code -->
@@ -261,12 +250,6 @@
             <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Αποσύνδεση</a></li>
           <?php endif; ?>
         </ul>
-        <form class="navbar-form text-center search-form" action="/action_page.php">
-          <div class="form-group">
-            <input type="text" class="form-control search-box" placeholder="Αναζήτηση" name="search">
-          </div>
-        </form>
-
       </div>
     <!--/.nav-collapse -->
   </div>
@@ -278,16 +261,16 @@
 
     <div class="row text-center target-groups">
       <div class="col-md-2"></div>
-      <div class="col-md-2">
+      <div class="col-md-2 group">
         <div type="button" onclick="location.href = 'insured.php';" class="btn btn-info target-group family"><h3>Ασφαλισμένοι</h3></div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 group">
         <div type="button" onclick="location.href = 'retired.php';" class="btn btn-info target-group retired"><h3>Συνταξιούχοι</h3></div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 group">
         <div type="button" class="btn btn-info target-group employer"><h3>Εργοδότες</h3></div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 group">
         <div type="button" class="btn btn-info target-group disability"><h3>A.M.E.A</h3></div>
       </div>
       <div class="col-md-2"></div>
@@ -463,12 +446,9 @@
       </div>
       <div class="col-sm-4">
         <div class="row">
-          <div class="col-sm-8"><h5>Created by <a class="footer-link" href="https://github.com/YolandaKok">Yolanda Kokkinou</a> & <a class="footer-link" href="https://github.com/dimitramav">Dimitra Mavroforaki</a> 2017</h5></div>
-          <div class="col-sm-4">
-            <img src="images/by.svg" style="height: 30px; weight: 30px;"/>
-            <img src="images/cc.svg" style="height: 30px; weight: 30px;"/>
-            <img src="images/nc-eu.svg" style="height: 30px; weight: 30px;"/>
-            <img src="images/sa.svg" style="height: 30px; weight: 30px;"/>
+          <div class="col-lg-8 col-sm-6"><h5>Created by <a class="footer-link" href="https://github.com/YolandaKok">Yolanda Kokkinou</a> & <a class="footer-link" href="https://github.com/dimitramav">Dimitra Mavroforaki</a> 2017</h5></div>
+          <div class="col-lg-4 col-sm-6">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
           </div>
         </div>
       </div>

@@ -28,11 +28,13 @@ else {
 // Hash password for security
 $password = password_hash ( $password , PASSWORD_BCRYPT);
 
+$money = 700;
+
 // Insert greek characters in mysql database
 mysqli_query($conn, "SET NAMES 'utf8'");
 
 // attempt insert query execution
-$sql = "INSERT INTO users (username, password, firstname, lastname, email, ama, amka, HaveInsurance, HaveRetirement) VALUES ('$username', '$password', '$firstname', '$lastname', '$email', '$ama', '$amka', '$HaveInsurance', '$HaveRetirement')";
+$sql = "INSERT INTO users (username, password, firstname, lastname, email, ama, amka, HaveInsurance, HaveRetirement, money) VALUES ('$username', '$password', '$firstname', '$lastname', '$email', '$ama', '$amka', '$HaveInsurance', '$HaveRetirement', '$money')";
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
 } else {

@@ -1,7 +1,6 @@
 
 <?php session_start() ?>
 <!DOCTYPE html>
-<html lang="en">
 <head>
   <title>Προφίλ</title>
   <meta charset="utf-8">
@@ -17,33 +16,10 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <link href="fontawesome-free-5.0.1/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900|Open+Sans:700|Roboto" rel="stylesheet">
+  <script src="scripts/profile.js"></script>
 </head>
 <body>
  <!--different content for every link in side menu-->
-<script>
-function openChoice(evt, choice) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(choice).style.display = "block";
-    evt.currentTarget.className += " active";
-
-}
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-$('#click').click(function(){
-    $('#progressBar').val(60);
-});
-// Get the element with id="defaultOpen" and click on it
-</script>
 
   <div class="container-fluid">
   <!-- Navbar Code -->
@@ -314,6 +290,7 @@ $('#click').click(function(){
                 $ama=$row[7];
                 $amka=$row[8];
                 $email=$row[9];
+                mysqli_close($conn);
             ?>
             <h4 class="text-center">
             <?php
@@ -371,7 +348,7 @@ $('#click').click(function(){
                     <?php if ($HaveInsurance==1): ?>
                     <label><input type="radio" name="HaveInsurance" checked=checked>Ασφαλισμένος</label>
                     <?else: ?>
-                    <label><input type="radio" name="HaveInsurance" checked=checked>Ασφαλισμένος</label>
+                    <label><input type="radio" name="HaveInsurance" checked=checked>Συνταξιούχος</label>
                     <?endif;?>
                   </div>
                 </div>
@@ -395,7 +372,7 @@ $('#click').click(function(){
                       $result=mysqli_query($conn,$sql);
                       if (mysqli_num_rows($result) == 0) {
                           echo "O χρήστης δεν έχει υποβάλει κάποια αίτηση" ;
-                          exit;
+                          
                       }
                       $count=0;
                       while ($row = mysqli_fetch_assoc($result)) {
@@ -518,9 +495,6 @@ $('#click').click(function(){
                           echo '</div>';
                         echo '<hr>';
                       }
-
-
-
 
                     mysqli_close($conn);
             ?>
@@ -662,4 +636,6 @@ $('#click').click(function(){
 <!-- End of footer sitemap -->
 
 </div>
+
+
 </body>

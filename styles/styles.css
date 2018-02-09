@@ -188,12 +188,16 @@ I will show you how to change a height of a standard Bootstrap navbar.
 }
 
 /* Class for responsive flexbox grid */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .flex-body {
     flex-direction: column;
   }
   .flex-column {
     flex-direction: row;
+  }
+  .group {
+    padding-top: 20px !important;
+    padding-left: 30px !important;
   }
 }
 
