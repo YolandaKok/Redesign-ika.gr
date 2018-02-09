@@ -1,6 +1,6 @@
 <?php
 require_once 'login.php';
-$conn = new mysqli($hn,$un,$pw,$db);
+$conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
 // Check Connection
 if ($conn->connect_error) die ($conn->connect_error);
 mysqli_query($conn, "SET NAMES 'utf8'");
