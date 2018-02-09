@@ -35,7 +35,7 @@
               <span class="icon-bar"></span>
             </button>
   <a class="navbar-brand" href="index.php">
-    <img src="/eam/images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
+    <img src="/images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
   </a>
       <a class="navbar-brand" href="index.php">Ίδρυμα Κοινωνικών Ασφαλίσεων</a>
     </div>
@@ -314,7 +314,7 @@
         <div class="panel-body">
               <?php
               require_once 'login.php';
-              $conn = new mysqli($hn,$un,$pw,$db);
+              $conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
               mysqli_query($conn, "SET NAMES 'utf8'");
               $sql_news = "SELECT notes FROM news";
               $result_news = $conn->query($sql_news);

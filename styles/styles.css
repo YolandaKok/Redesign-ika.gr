@@ -121,19 +121,19 @@ I will show you how to change a height of a standard Bootstrap navbar.
 
 
 .target-group.family:before {
-    background-image: url('/eam/images/family.jpg');
+    background-image: url('/images/family.jpg');
 }
 
 .target-group.retired:before {
-    background-image: url('/eam/images/retired.jpg');
+    background-image: url('/images/retired.jpg');
 }
 
 .target-group.employer:before {
-    background-image: url('/eam/images/employer.jpg');
+    background-image: url('/images/employer.jpg');
 }
 
 .target-group.disability:before {
-    background-image: url('/eam/images/disabled.jpg');
+    background-image: url('/images/disabled.jpg');
 }
 
 .target-group h3 {
