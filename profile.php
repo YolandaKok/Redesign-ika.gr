@@ -440,7 +440,7 @@
             <h3 class="text-center" style="border-bottom: 1px solid #AAA;">Εξέλιξη αιτήσεων</h3></br>
             <?php
                     require_once 'login.php';
-                    $conn = new mysqli($hn,$un,$pw,$db);
+                    $conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
                     // Check Connection
                     if ($conn->connect_error) die ($conn->connect_error);
                     // attempt insert query execution
