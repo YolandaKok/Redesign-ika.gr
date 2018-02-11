@@ -30,7 +30,6 @@
  if($anything_found==0)
   $query = "INSERT INTO applications (completed, users_id, app_date) VALUES ('$completed', '$app_id', '$app_date')";
  $res= $conn->query($query);
- echo 'Hello';
 try {
 
     $p = new PDFlib();

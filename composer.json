@@ -1,5 +1,7 @@
 {
   "require": {
-    "ext-mysqli": "*"
+    "ext-mysqli": "*",
+    "php": ">=7.0",
+    "10usb/pdf-lib": "^1.0"
   }
 }

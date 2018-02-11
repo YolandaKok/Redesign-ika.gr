@@ -4,9 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffeb8a3fed94db107fbf8d2a011ba0fe",
-    "content-hash": "a15ec819ce8d6d1ca8224db69a301e67",
-    "packages": [],
+    "hash": "0b1875fee37f680a3c00a46ef51436c0",
+    "content-hash": "9e801b762805f90b6024d315b6d64f7d",
+    "packages": [
+        {
+            "name": "10usb/pdf-lib",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/10usb/pdf-lib.git",
+                "reference": "3cff5c78a6d89af0c158482761120ee818558af9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/10usb/pdf-lib/zipball/3cff5c78a6d89af0c158482761120ee818558af9",
+                "reference": "3cff5c78a6d89af0c158482761120ee818558af9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pdflib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Library for loading or creating a PDF",
+            "time": "2017-08-13 18:30:01"
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
@@ -14,7 +42,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "ext-mysqli": "*"
+        "ext-mysqli": "*",
+        "php": ">=7.0"
     },
     "platform-dev": []
 }
