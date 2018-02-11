@@ -4,92 +4,29 @@
 
  require_once 'login.php';
  $conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
- // Check Connection
- if ($conn->connect_error) die ($conn->connect_error);
- // Escape user inputs for security
- // Take arguments from POST method
- $app_id = $_GET["id"];
- // Select from users where username and password
- mysqli_query($conn, "SET NAMES 'utf8'");
+ $file = new File('test.pdf');
+ $file->getInformation()
+ 	->setTitle('My PDF Library')
+ 	->setSubject('How to create a pdf library')
+ 	->setAuthor('10usb');
 
- $query = "SELECT * FROM applications WHERE idapplications=$app_id";
- $res= $conn->query($query);
- $res->data_seek(0);
- $row = $res->fetch_assoc();
- $name = $row['imp_name'];
- $name = grstrtoupper($name);
- $surname = $row['imp_surname'];
- $surname = grstrtoupper($surname);
-try {
+ $catalog = $file->getCatalog()->setSize(595.276, 841.890);
 
-    $p = new PDFlib();
 
-    # This means we must check return values of load_font() etc.
-    $p->set_option("errorpolicy=return");
+ $page = $catalog->addPage();
 
-    /* Enable the following line if you experience crashes on OS X
-     * (see PDFlib-in-PHP-HowTo.pdf for details):
-     * $p->set_option("usehostfonts=false");
-     */
+ $canvas = $page->getCanvas();
 
-    /* all strings are expected as utf8 */
-    $p->set_option("stringformat=utf8");
+ $canvas->setStrokeColor(255, 0, 255);
+ $canvas->setLineWidth(5);
+ $canvas->line(30, 30, 50, 100);
 
-    /*  open new PDF file; insert a file name to create the PDF on disk */
-    if ($p->begin_document("", "") == 0) {
-	die("Error: " . $p->get_errmsg());
-    }
 
-    $p->set_info("Creator", "Yolanda Kokkinou");
-    $p->set_info("Author", "Yolanda Kokkinou");
-    $p->set_info("Title", "Form");
+ $canvas->setFillColor(50, 50, 50);
+ $canvas->setFont($page->getFont('Helvetica', 11));
+ $canvas->text(50, 50, "PDF Library");
+ $canvas->text(50, 70, "You start with...");
 
-    $p->begin_page_ext(595, 842, "");
+ $file->flush();
 
-    $font = $p->load_font("Symbol", "unicode", "");
-    if ($font == 0) {
-	die("Error: " . $p->get_errmsg());
-    }
-
-    $p->setfont($font, 30.0);
-    $p->set_text_pos(50, 700);
-    $p->show("ΙΔΡΥΜΑ ΚΟΙΝΩΝΙΚΩΝ ΑΣΦΑΛΙΣΕΩΝ");
-    $p->setfont($font, 24.0);
-    $p->continue_text("");
-    $p->continue_text("ΔΗΛΩΣΗ ΕΜΜΕΣΑ ΑΣΦΑΛΙΣΜΕΝΟΥ");
-    $p->continue_text("");
-    $p->setfont($font, 16.0);
-    $p->continue_text("ΟΝΟΜΑ: ");
-    $p->show($name);
-    $p->continue_text("");
-    $p->continue_text("ΕΠΙΘΕΤΟ: ");
-    $p->show($surname);
-    $p->continue_text("");
-    if($row['isChild']) $child = "ΠΑΙΔΙ";
-    if(!$row['isChild']) $child = "ΣΥΖΥΓΟΣ";
-    $p->continue_text("ΣΥΓΓΕΝΕΙΑ: ");
-    $p->show($child);
-    $p->end_page_ext("");
-
-    $p->end_document("");
-
-    $buf = $p->get_buffer();
-    $len = strlen($buf);
-
-    header("Content-type: application/pdf");
-    header("Content-Length: $len");
-    header("Content-Disposition: inline; filename=Δήλωση Έμμεσα Ασφαλισμένου.pdf");
-    print $buf;
-
-}
-catch (PDFlibException $e) {
-    die("PDFlib exception occurred in hello sample:\n" .
-	"[" . $e->get_errnum() . "] " . $e->get_apiname() . ": " .
-	$e->get_errmsg() . "\n");
-}
-catch (Exception $e) {
-    die($e);
-}
-
-$p = 0;
 ?>
