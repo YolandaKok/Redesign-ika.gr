@@ -3,5 +3,9 @@
     "ext-mysqli": "*",
     "php": ">=7.0",
     "10usb/pdf-lib": "^1.0"
-  }
+  },
+  "autoload": {
+  "psr-4": { "pdflib\\": "src/" }
+}
+
 }
