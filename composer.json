@@ -1,12 +1,7 @@
 {
   "require": {
     "ext-mysqli": "*",
-    "php": ">=7.0",
-    "10usb/pdf-lib": "^1.0",
-    "skurrier/pdflib": "^1.0"
-  },
-  "autoload": {
-  "psr-4": { "pdflib\\": "src/" }
-}
+    "php": ">=7.0"
+  }
 
 }
