@@ -24,7 +24,7 @@
  $pdf->AddPage();
 
  // Add a Unicode font (uses UTF-8)
- $pdf->AddFont('DejaVu','','tfpdf/font/unifont/DejaVuSansCondensed.ttf',true);
+ $pdf->AddFont('Courier','','tfpdf/font/unifont/DejaVuSansCondensed.ttf',true);
  $pdf->SetFont('DejaVu','',14);
 
  // Load a UTF-8 string from a file and print it
