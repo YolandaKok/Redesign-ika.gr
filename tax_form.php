@@ -30,83 +30,35 @@
  if($anything_found==0)
   $query = "INSERT INTO applications (completed, users_id, app_date) VALUES ('$completed', '$app_id', '$app_date')";
  $res= $conn->query($query);
-try {
 
-    $p = new PDFlib();
 
-    # This means we must check return values of load_font() etc.
-    $p->set_option("errorpolicy=return");
 
-    /* Enable the following line if you experience crashes on OS X
-     * (see PDFlib-in-PHP-HowTo.pdf for details):
-     * $p->set_option("usehostfonts=false");
-     */
+  require('tfpdf/tfpdf.php');
 
-    /* all strings are expected as utf8 */
-    $p->set_option("stringformat=utf8");
+  $pdf = new tFPDF();
+  $pdf->AddPage();
 
-    /*  open new PDF file; insert a file name to create the PDF on disk */
-    if ($p->begin_document("", "") == 0) {
-	die("Error: " . $p->get_errmsg());
-    }
-
-    $p->set_info("Creator", "Yolanda Kokkinou");
-    $p->set_info("Author", "Yolanda Kokkinou");
-    $p->set_info("Title", "Form");
-
-    $p->begin_page_ext(595, 842, "");
-
-    $font = $p->load_font("Symbol", "unicode", "");
-    if ($font == 0) {
-	die("Error: " . $p->get_errmsg());
-    }
-
-    $p->setfont($font, 30.0);
-    $p->set_text_pos(50, 700);
-    $p->show("ΙΔΡΥΜΑ ΚΟΙΝΩΝΙΚΩΝ ΑΣΦΑΛΙΣΕΩΝ");
-    $p->setfont($font, 24.0);
-    $p->continue_text("");
-    $p->continue_text("ΒΕΒΑΙΩΣΗ ΓΙΑ ΦΟΡΟΛΟΓΙΚΗ ΧΡΗΣΗ");
-    $p->continue_text("");
-    $p->setfont($font, 16.0);
-    $p->continue_text("ΒΕΒΑΙΩΝΟΥΜΕ ΟΤΙ Ο / Η ΣΥΝΤΑΞΙΟΥΧΟΣ ΜΕ");
-    $p->continue_text("");
-    $p->continue_text("ΟΝΟΜΑ: ".$name);
-    $p->show(" ");
-    $p->show($surname);
-    $p->show(" ΛΑΜΒΑΝΕΙ ΜΗΝΙΑΙΑ ΤΟ ΠΟΣΟ ");
-    $p->continue_text("");
-    $p->continue_text("ΤΩΝ ".$row['money']." ΕΥΡΩ");
-    $p->continue_text("");
-    $total = $row['money'] * 12;
-    $p->continue_text("ΕΤΗΣΙΟ ΕΙΣΟΔΗΜΑ: ".$total." ΕΥΡΩ");
-    $tax = $total * 6/100;
-    $total = $total - $tax;
-    $p->continue_text("");
-    $p->continue_text("ΦΟΡΟΣ: ".$tax." ΕΥΡΩ");
-    $p->continue_text("");
-    $p->continue_text("ΚΑΘΑΡΟ ΕΙΣΟΔΗΜΑ: ".$total." ΕΥΡΩ");
-    $p->end_page_ext("");
-
-    $p->end_document("");
-
-    $buf = $p->get_buffer();
-    $len = strlen($buf);
-
-    header("Content-type: application/pdf");
-    header("Content-Length: $len");
-    header("Content-Disposition: inline; filename=Βεβαίωση για φορολογική χρήση.pdf");
-    print $buf;
-
-}
-catch (PDFlibException $e) {
-    die("PDFlib exception occurred in hello sample:\n" .
-	"[" . $e->get_errnum() . "] " . $e->get_apiname() . ": " .
-	$e->get_errmsg() . "\n");
-}
-catch (Exception $e) {
-    die($e);
-}
-
-$p = 0;
+  // Add a Unicode font (uses UTF-8)
+  $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+  $pdf->SetFont('DejaVu','',24);
+  $pdf->Write(8,'ΙΔΡΥΜΑ ΚΟΙΝΩΝΙΚΩΝ ΑΣΦΑΛΙΣΕΩΝ');
+  $pdf->Ln(10);
+  $pdf->Ln(10);
+  $pdf->SetFont('DejaVu','',20);
+  $pdf->Write(8,'Βεβαίωση για φορολογική χρήση');
+  $pdf->Ln(10);
+  $pdf->Ln(10);
+  $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα'.$name.$surname);
+  $pdf->Ln(10);
+  $pdf->Write(8, 'Λαμβάνει μηνιαία το ποσό των '.$row['money'].'Ευρώ');
+  $total = $row['money'] * 12;
+  $pdf->Ln(10);
+  $pdf->Write("Ετήσιο Εισόδημα: ".$total." Ευρώ");
+  $pdf->Ln(10);
+  $tax = $total * 6/100;
+  $total = $total - $tax;
+  $pdf->Write("Φόρος: ".$tax." Ευρώ");
+  $pdf->Ln(10);
+  $pdf->Write("Καθαρό Εισόδημα: ".$total." Ευρώ");
+  $pdf->Output();
 ?>
