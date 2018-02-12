@@ -12,13 +12,11 @@
  // Select from users where username and password
  mysqli_query($conn, "SET NAMES 'utf8'");
 
- $query = "SELECT * FROM users WHERE id=$app_id";
+ $query = "SELECT * FROM applications WHERE idapplications=$app_id";
  $res= $conn->query($query);
  $res->data_seek(0);
  $row = $res->fetch_assoc();
- $name = $row['firstname'];
- $name = grstrtoupper($name);
- $surname = $row['lastname'];
+ $name = $row['imp_name'];
  //$surname = grstrtoupper($surname);
  require('fpdf181/fpdf.php');
  //$surname = 'hh';
