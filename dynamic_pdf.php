@@ -17,12 +17,12 @@
  $res->data_seek(0);
  $row = $res->fetch_assoc();
  $name = $row['imp_name'];
- $name = grstrtoupper($name);
+ //$name = grstrtoupper($name);
  require('fpdf181/fpdf.php');
  //$surname = 'hh';
  $pdf = new FPDF();
  $pdf->AddPage();
- $pdf->SetFont('Arial','B',16);
+ $pdf->SetFont('Arial','',16);
  $pdf->Cell(40,10,$name);
  $pdf->Output();
 
