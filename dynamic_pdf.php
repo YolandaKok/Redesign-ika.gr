@@ -4,8 +4,29 @@
 
  //require_once 'login.php';
  //header('Content-Type: text/plain');
- require_once '10usb/pdf-lib/autoloader.php';
  //$conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
- $file = new File('test.pdf');
+ namespace PDFLib\Test;
+ use PDFLib\PDFLib;
+ class ExampleDocument extends PDFLib
+ {
+     /**
+      * @inherit
+      */
+     public function __construct()
+     {
+         parent::__construct();
+         $this->SetAutoPageBreak(true, $this->bMargin + $this->FontSizePt);
+         $this->SetTopMargin($this->tMargin + $this->FontSizePt);
+     }
+     /**
+      * @inherit
+      */
+     public function Header()
+     {
+         $this->SetDefaultFont();
+         $this->SetY($this->tMargin - $this->FontSizePt);
+         $this->Cell(0, 0, "This text is within the header!", 0, 1, "C");
+     }
+   } 
 
 ?>

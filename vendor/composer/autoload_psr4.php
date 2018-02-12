@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'pdflib\\' => array($baseDir . '/src', $vendorDir . '/10usb/pdf-lib/src'),
+    'PDFLib\\' => array($vendorDir . '/skurrier/pdflib/src'),
 );
