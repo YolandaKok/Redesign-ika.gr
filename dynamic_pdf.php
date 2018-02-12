@@ -16,7 +16,7 @@
  $res= $conn->query($query);
  $res->data_seek(0);
  $row = $res->fetch_assoc();
- $name = 'Γιολαντα';
+ $name = 'yolanda';
  //$name = grstrtoupper($name);
  require('fpdf181/fpdf.php');
  //$surname = 'hh';
