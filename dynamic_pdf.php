@@ -18,7 +18,10 @@
  $row = $res->fetch_assoc();
  $name = $row['imp_name'];
  $surname = $row['imp_surname'];
- //$name = grstrtoupper($name);
+ $birthday = $row['imp_birthday'];
+ $isChild = $row['isChild'];
+ $isHusband_Wife = $row['isHusband_Wife'];
+
  require('tfpdf/tfpdf.php');
 
  $pdf = new tFPDF();
@@ -33,11 +36,23 @@
  $pdf->SetFont('DejaVu','',20);
  $pdf->Write(8,'Δήλωση Έμμεσα Ασφαλισμένου');
  $pdf->Ln(10);
+ $pdf->Ln(10);
  $pdf->Write(8,'Όνομα: ');
  $pdf->Write(8,$name);
  $pdf->Ln(10);
  $pdf->Write(8, 'Επώνυμο: ');
  $pdf->Write(8,$surname);
+ $pdf->Ln(10);
+ $pdf->Write(8, 'Ημερομηνία Γέννησης: ');
+ $pdf->Write(8,$birthday);
+ $pdf->Ln(10);
+ $pdf->Write(8, 'Συγγένεια: ');
+ if($isChild) {
+  $pdf->Write(8, 'Παιδί');
+ }
+ else {
+  $pdf->Write(8, 'Σύζυγος');
+ }
  // Load a UTF-8 string from a file and print it
 
  // Select a standard font (uses windows-1252)
