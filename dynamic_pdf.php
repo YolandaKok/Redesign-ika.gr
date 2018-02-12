@@ -5,15 +5,15 @@
  //require_once 'login.php';
  //header('Content-Type: text/plain');
  //$conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
- define('FPDF_FONTPATH','.');
- require('../fpdf.php');
+
+ require('fpdf181/fpdf.php');
 
  $pdf = new FPDF();
- $pdf->AddFont('Calligrapher','','calligra.php');
  $pdf->AddPage();
- $pdf->SetFont('Calligrapher','',35);
- $pdf->Cell(0,10,'Enjoy new fonts with FPDF!');
+ $pdf->SetFont('Arial','B',16);
+ $pdf->Cell(40,10,'Hello World!');
  $pdf->Output();
+
 
 
 ?>
