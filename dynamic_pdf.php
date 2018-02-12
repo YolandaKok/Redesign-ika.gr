@@ -22,7 +22,7 @@
  //$surname = 'hh';
  $pdf = new FPDF();
  $pdf->AddPage();
- $pdf->SetFont('Arial','',16);
+ $pdf->SetFont('Symbol','',16);
  $pdf->Cell(40,10,$name);
  $pdf->Output();
 
