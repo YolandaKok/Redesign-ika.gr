@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
               </button>
     <a class="navbar-brand" href="index.php">
-      <img src="/eam/images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
+      <img src="images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
     </a>
         <a class="navbar-brand" href="index.php">Ίδρυμα Κοινωνικών Ασφαλίσεων</a>
       </div>
