@@ -17,9 +17,7 @@
  $res->data_seek(0);
  $row = $res->fetch_assoc();
  $name = $row['firstname'];
- $name = grstrtoupper($name);
  $surname = $row['lastname'];
- $surname = grstrtoupper($surname);
 
  $app_date = date("d-m-Y");
  $completed = 1;
@@ -48,7 +46,7 @@
   $pdf->Write(8,'Βεβαίωση για φορολογική χρήση');
   $pdf->Ln(10);
   $pdf->Ln(10);
-  $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα'.$name.$surname);
+  $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα'.$name);
   $pdf->Ln(10);
   $pdf->Write(8, 'Λαμβάνει μηνιαία το ποσό των '.$row['money'].'Ευρώ');
   $total = $row['money'] * 12;
