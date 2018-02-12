@@ -48,14 +48,14 @@
   $pdf->Ln(10);
   $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα: ');
   $pdf->Write(8,$name);
-  $pdf->Ln(10);
+  $pdf->Write(8,' ');
   $pdf->Write(8,$surname);
-  $pdf->Write(8,'λαμβάνει το ποσό των ');
+  $pdf->Write(8,' λαμβάνει το ποσό των ');
   $pdf->Write(8,$row['money']);
-  $pdf->Write(8, 'ευρώ κάθε μήνα.');
+  $pdf->Write(8, ' ευρώ κάθε μήνα.');
   $pdf->Ln(10);
   $pdf->Write(8, 'Μεικτό Εισόδημα ανά έτος: ');
   $pdf->Write(8, $row['money'] * 12);
-  $pdf->Write(8, 'Ευρώ');
+  $pdf->Write(8, ' Ευρώ');
   $pdf->Output();
 ?>
