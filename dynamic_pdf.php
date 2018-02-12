@@ -25,16 +25,16 @@
 
  // Add a Unicode font (uses UTF-8)
  $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
- $pdf->SetFont('DejaVu','',14);
-
+ $pdf->SetFont('DejaVu','',24);
+ $pdf->Write(8,'ΙΔΡΥΜΑ ΚΟΙΝΩΝΙΚΩΝ ΑΣΦΑΛΙΣΕΩΝ');
+ $pdf->Ln(10);
+ $pdf->Write(8,'Δήλωση Έμμεσα Ασφαλισμένου');
  // Load a UTF-8 string from a file and print it
  $pdf->Write(8,$name);
 
  // Select a standard font (uses windows-1252)
  $pdf->SetFont('Arial','',14);
  $pdf->Ln(10);
- $pdf->Write(5,'The file size of this PDF is only 12 KB.');
-
  $pdf->Output();
 
 
