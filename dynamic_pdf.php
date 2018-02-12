@@ -16,16 +16,26 @@
  $res= $conn->query($query);
  $res->data_seek(0);
  $row = $res->fetch_assoc();
- $name = 'yolanda';
+ $name = $row['imp_name'];
  //$name = grstrtoupper($name);
- require('fpdf181/fpdf.php');
- //$surname = 'hh';
- $pdf = new FPDF();
- $pdf->AddPage();
- $pdf->SetFont('Symbol','',16);
- $pdf->Cell(40,10,$name);
- $pdf->Output();
+ require('tfpdf/tfpdf.php');
 
+ $pdf = new tFPDF();
+ $pdf->AddPage();
+
+ // Add a Unicode font (uses UTF-8)
+ $pdf->AddFont('DejaVu','','tfpdf/font/unifont/DejaVuSansCondensed.ttf',true);
+ $pdf->SetFont('DejaVu','',14);
+
+ // Load a UTF-8 string from a file and print it
+ $pdf->Write(8,$name);
+
+ // Select a standard font (uses windows-1252)
+ $pdf->SetFont('Arial','',14);
+ $pdf->Ln(10);
+ $pdf->Write(5,'The file size of this PDF is only 12 KB.');
+
+ $pdf->Output();
 
 
 ?>
