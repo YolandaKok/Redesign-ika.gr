@@ -44,6 +44,11 @@
   $pdf->Ln(10);
   $pdf->SetFont('DejaVu','',20);
   $pdf->Write(8,'Βεβαίωση για φορολογική χρήση');
+  $pdf->Ln(10);
+  $pdf->Ln(10);
+  $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα');
+  $pdf->Write(8,$name);
+  $pdf->Ln(10);
 
   $pdf->Output();
 ?>
