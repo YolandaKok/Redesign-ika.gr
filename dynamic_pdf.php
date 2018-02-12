@@ -5,28 +5,15 @@
  //require_once 'login.php';
  //header('Content-Type: text/plain');
  //$conn = new mysqli($cleardb_server,$cleardb_username,$cleardb_password,$cleardb_db);
- namespace PDFLib\Test;
- use PDFLib\PDFLib;
- class ExampleDocument extends PDFLib
- {
-     /**
-      * @inherit
-      */
-     public function __construct()
-     {
-         parent::__construct();
-         $this->SetAutoPageBreak(true, $this->bMargin + $this->FontSizePt);
-         $this->SetTopMargin($this->tMargin + $this->FontSizePt);
-     }
-     /**
-      * @inherit
-      */
-     public function Header()
-     {
-         $this->SetDefaultFont();
-         $this->SetY($this->tMargin - $this->FontSizePt);
-         $this->Cell(0, 0, "This text is within the header!", 0, 1, "C");
-     }
-   } 
+ define('FPDF_FONTPATH','.');
+ require('../fpdf.php');
+
+ $pdf = new FPDF();
+ $pdf->AddFont('Calligrapher','','calligra.php');
+ $pdf->AddPage();
+ $pdf->SetFont('Calligrapher','',35);
+ $pdf->Cell(0,10,'Enjoy new fonts with FPDF!');
+ $pdf->Output();
+
 
 ?>
