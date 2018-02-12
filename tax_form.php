@@ -44,19 +44,6 @@
   $pdf->Ln(10);
   $pdf->SetFont('DejaVu','',20);
   $pdf->Write(8,'Βεβαίωση για φορολογική χρήση');
-  $pdf->Ln(10);
-  $pdf->Ln(10);
-  $pdf->Write(8,'Βεβαιώνουμε ότι ο / η  συνταξιούχος με όνομα');
-  $pdf->Ln(10);
-  $pdf->Write(8, 'Λαμβάνει μηνιαία το ποσό των '.$row['money'].'Ευρώ');
-  $total = $row['money'] * 12;
-  $pdf->Ln(10);
-  $pdf->Write("Ετήσιο Εισόδημα: ".$total." Ευρώ");
-  $pdf->Ln(10);
-  $tax = $total * 6/100;
-  $total = $total - $tax;
-  $pdf->Write("Φόρος: ".$tax." Ευρώ");
-  $pdf->Ln(10);
-  $pdf->Write("Καθαρό Εισόδημα: ".$total." Ευρώ");
+
   $pdf->Output();
 ?>
