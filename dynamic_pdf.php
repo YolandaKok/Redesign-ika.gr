@@ -17,6 +17,7 @@
  $res->data_seek(0);
  $row = $res->fetch_assoc();
  $name = $row['imp_name'];
+ $surname = $row['imp_surname'];
  //$name = grstrtoupper($name);
  require('tfpdf/tfpdf.php');
 
@@ -28,13 +29,18 @@
  $pdf->SetFont('DejaVu','',24);
  $pdf->Write(8,'ΙΔΡΥΜΑ ΚΟΙΝΩΝΙΚΩΝ ΑΣΦΑΛΙΣΕΩΝ');
  $pdf->Ln(10);
+ $pdf->Ln(10);
+ $pdf->SetFont('DejaVu','',20);
  $pdf->Write(8,'Δήλωση Έμμεσα Ασφαλισμένου');
- // Load a UTF-8 string from a file and print it
+ $pdf->Ln(10);
+ $pdf->Write(8,'Όνομα: ');
  $pdf->Write(8,$name);
+ $pdf->Ln(10);
+ $pdf->Write(8, 'Επώνυμο: ');
+ $pdf->Write(8,$surname);
+ // Load a UTF-8 string from a file and print it
 
  // Select a standard font (uses windows-1252)
- $pdf->SetFont('Arial','',14);
- $pdf->Ln(10);
  $pdf->Output();
 
 
