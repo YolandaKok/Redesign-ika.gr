@@ -21,7 +21,7 @@
  $surname = $row['lastname'];
  $surname = grstrtoupper($surname);
  require('fpdf181/fpdf.php');
-
+ $surname = 'hh';
  $pdf = new FPDF();
  $pdf->AddPage();
  $pdf->SetFont('Symbol','B',16);
