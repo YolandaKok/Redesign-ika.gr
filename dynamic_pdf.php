@@ -19,13 +19,13 @@
  $name = $row['firstname'];
  $name = grstrtoupper($name);
  $surname = $row['lastname'];
- $surname = grstrtoupper($surname);
+ //$surname = grstrtoupper($surname);
  require('fpdf181/fpdf.php');
- $surname = 'hh';
+ //$surname = 'hh';
  $pdf = new FPDF();
  $pdf->AddPage();
  $pdf->SetFont('Symbol','B',16);
- $pdf->Cell(40,10,$surname);
+ $pdf->Cell(40,10,$name);
  $pdf->Output();
 
 
