@@ -334,6 +334,7 @@ $(function(){
         </div>
 
         <!-- Start of footer sitemap -->
+        <div class="row-footer">
         <footer>
           <div class="row">
             <div class="col-sm-2">
@@ -457,8 +458,11 @@ $(function(){
             <div class="col-sm-2"></div>
           </div>
         </footer>
+      </div>
         <!-- End of footer sitemap -->
         </div>
-
+        <?php
+          require('mobile-footer.php');
+        ?>
 
 </body>

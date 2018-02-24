@@ -883,16 +883,25 @@ margin-top: 50px;
   .breadcrumb {
     padding-top: 60px;
   }
+  .desktop-nav {
+    display: none;
+  }
 }
 
 .mobile-footer-header {
   font-size: 18px;
   font-weight: bold;
   color: #fff !important;
+  underline: none;
+}
+
+a.mobile-footer-header.collapsed {
+  text-decoration: none;
 }
 
 .mobile-footer-color {
   background-color: #333;
+  color: white;
 }
 
 .fa-github {
