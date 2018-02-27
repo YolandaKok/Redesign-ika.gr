@@ -16,10 +16,11 @@
 </head>
 <body>
   <div class="container-fluid">
-  <?php require('mobile-nav.php'); ?>  
+  <?php require('mobile-nav.php'); ?>
   <!-- Navbar Code -->
   <!-- Static navbar -->
   <!-- Static navbar -->
+  <div class="desktop-nav">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -264,6 +265,7 @@
     </div>
     <!--/.container-fluid -->
   </nav>
+</div>
     <!-- End Navbar -->
 
 <div class="container line">

@@ -218,6 +218,9 @@ I will show you how to change a height of a standard Bootstrap navbar.
   .target-groups {
     padding-top: 0px !important;
   }
+  .line {
+    padding-top: 0px;
+  }
 }
 
 /* MEGA MENU */
@@ -889,9 +892,6 @@ margin-top: 50px;
   }
   .list-group-item {
     color: #000;
-  }
-  .breadcrumb {
-    padding-top: 60px;
   }
   .desktop-nav {
     display: none;

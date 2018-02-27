@@ -22,9 +22,10 @@
  <!--different content for every link in side menu-->
 
   <div class="container-fluid">
-  <?php require('mobile-nav.php'); ?>  
+  <?php require('mobile-nav.php'); ?>
   <!-- Navbar Code -->
   <!-- Static navbar -->
+  <div class="desktop-nav">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -263,6 +264,7 @@
     </div>
     <!--/.container-fluid -->
   </nav>
+</div>
     <!-- End Navbar -->
   <div class="container profile-container">
     <div class="row" style="display:flex;">
