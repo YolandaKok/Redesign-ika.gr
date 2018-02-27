@@ -885,8 +885,7 @@ margin-top: 50px;
   }
   .mobile-footer {
     display: block;
-    margin:0 !important;
-    padding: 0 !important;
+    margin-top: 40px !important;
   }
   .list-group-item {
     color: #000;

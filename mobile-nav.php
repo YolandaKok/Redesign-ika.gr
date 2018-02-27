@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="index.php">
-          <img src="/eam/images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
+          <img src="images/logo.svg" width="80" height="80" class="d-inline-block align-top" alt="">
         </a>
         <a class="navbar-brand" href="index.php">Ίδρυμα Κοινωνικών Ασφαλίσεων</a>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -14,6 +14,18 @@
       </div>
 
       <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <?php if(!isset($_SESSION['user'])): ?>
+          <li><a href="signup.php"><i class ="fas fa-user"></i> Εγγραφή</a></li>
+          <?php else: ?>
+          <li><a href="profile.php"><i class ="fas fa-user"></i> <?php echo $_SESSION['user']?></a></li>
+          <?php endif; ?>
+          <?php if(!isset($_SESSION['user'])): ?>
+            <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση</a></li>
+          <?php else: ?>
+            <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Αποσύνδεση</a></li>
+          <?php endif; ?>
+        </ul>
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ασφαλισμένοι<span class="caret"></span></a>
@@ -46,18 +58,7 @@
             </ul>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <?php if(!isset($_SESSION['user'])): ?>
-          <li><a href="signup.php"><i class ="fas fa-user"></i> Εγγραφή</a></li>
-          <?php else: ?>
-          <li><a href="profile.php"><i class ="fas fa-user"></i> <?php echo $_SESSION['user']?></a></li>
-          <?php endif; ?>
-          <?php if(!isset($_SESSION['user'])): ?>
-            <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> Σύνδεση</a></li>
-          <?php else: ?>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Αποσύνδεση</a></li>
-          <?php endif; ?>
-        </ul>
+
       </div>
     </div>
   </nav>

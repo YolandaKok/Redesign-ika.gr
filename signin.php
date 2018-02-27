@@ -16,6 +16,7 @@
 </head>
 <body>
   <div class="container-fluid">
+  <?php require('mobile-nav.php'); ?>  
   <!-- Navbar Code -->
   <!-- Static navbar -->
   <!-- Static navbar -->

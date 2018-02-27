@@ -23,6 +23,7 @@
   <script>
 </script>
   <div class="container-fluid">
+  <?php require('mobile-nav.php'); ?>  
   <!-- Navbar Code -->
   <!-- Static navbar -->
   <nav class="navbar navbar-default navbar-fixed-top">
