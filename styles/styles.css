@@ -43,6 +43,14 @@ I will show you how to change a height of a standard Bootstrap navbar.
     display: none;
   }
 
+  .desktop-nav {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
 }
 
 /* Button Shading */
@@ -206,6 +214,9 @@ I will show you how to change a height of a standard Bootstrap navbar.
   .group {
     padding-top: 40px !important;
     padding-left: 30px !important;
+  }
+  .target-groups {
+    padding-top: 0px !important;
   }
 }
 
@@ -885,6 +896,9 @@ margin-top: 50px;
   }
   .desktop-nav {
     display: none;
+  }
+  .mobile-nav {
+    display: block;
   }
 }
 

@@ -23,6 +23,8 @@
 <body>
 
 <div class="container-fluid">
+<!-- Mobile Navigation -->
+<?php require('mobile-nav.php'); ?>
 <!-- Navbar Code -->
 <!-- Static navbar -->
 <div class="desktop-nav">
