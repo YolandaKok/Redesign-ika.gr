@@ -1,0 +1,8 @@
+{
+  "require": {
+    "ext-mysqli": "*",
+    "php": ">=7.0",
+    "ext-mbstring": "*"
+  }
+
+}
