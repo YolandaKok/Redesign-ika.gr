@@ -4,7 +4,7 @@ https://rocky-brushlands-37111.herokuapp.com
 
 # Working Parts of the site:
 - [Αρχική Σελίδα > Ασφαλισμένοι](https://rocky-brushlands-37111.herokuapp.com/insured.php)
-- [Αρχική Σελίδα > Ασφαλισμένοι > Δήλωση Έμμεσα Ασφαλισμένου Προσώπου](https://rocky-brushlands37111.herokuapp.com/insured_application.php)
+- [Αρχική Σελίδα > Ασφαλισμένοι > Δήλωση Έμμεσα Ασφαλισμένου Προσώπου](https://rocky-brushlands-37111.herokuapp.com/insured_application.php)
 - [Αρχική Σελίδα > Συνταξιούχοι](https://rocky-brushlands-37111.herokuapp.com/retired.php)
 - [Αρχική Σελίδα > Συνταξιούχοι > Βεβαίωση Σύνταξης για Φορολογική Χρήση](https://rocky-brushlands-37111.herokuapp.com/confirmation.php)
 - Σύνδεση
